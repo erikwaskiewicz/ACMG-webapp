@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>ACGS_guidelines_tool</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Variant classification tool</h2>
+        <p>Tool for classifying variants using the ACMG/AMP guidelines</p>
+        <div class="row">
+            <!-- Main body -->
+            <div class="panel-group col-sm9 col-md-9 col-lg-9" id="accordion">
+                <!-- Population data section -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Population data</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-condensed">
+                                <!-- PS4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PS4</b></td>
+                                    <td style="width:300px">Prevalence in affecteds statistically increased over controls.
+                                        <a href="#PS4-info" data-toggle="collapse">More info...</a>
+                                        <div id="PS4-info" class="collapse">
+<br>
+The prevalence of the variant in affected individuals is significantly increased compared with the prevalence in controls.
+<br>
+Note 1: Relative risk or OR, as obtained from case–control studies, is >5.0, and the confidence interval around the estimate of relative risk or OR does not include 1.0. See the article for detailed guidance.
+Note 2: In instances of very rare variants where case–control studies may not reach statistical significance, the prior observation of the variant in multiple unrelated patients with the same phenotype, and its absence in controls, may be used as moderate level of evidence
+                                        </div>
+                                        <div id="PS4-comment" class="collapse">
+                                            <form>
+                                                <br>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PS4-comment-1">
+                                                    <label class="form-check-label" for="PS4-comment-1">Reason for applying 1</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PS4-comment-2">
+                                                    <label class="form-check-label" for="PS4-comment-2">Reason for applying 2</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PS4-comment-input">Other comments</label>
+                                                    <textarea class="form-control" id="PS4-comment-input" rows="3" aria-describedby="emailHelp" placeholder="Add comments..."></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <!-- Button start-->
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#PS4-comment">Comment</a>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Not applied</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#PS4-summary" data-show="collapse">Apply PS4</a></li>
+                                                <li><a href="#PS4_M-summary" data-show="collapse">Apply PS4_moderate</a></li>
+                                                <li><a href="#PS4_S-summary" data-show="collapse">Apply PS4_supporting</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#PS4-maybe-summary" data-show="collapse">May be able to apply with further evidence</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <!-- Button end -->
+                                </tr>
+                                <!-- PM2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM2</b></td>
+                                    <td style="width:300px">Absent in population databases.
+                                        <a href="#PM2-info" data-toggle="collapse">More info...</a>
+                                        <div id="PM2-info" class="collapse">
+<br>
+Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes Project, or Exome Aggregation Consortium.
+<br>
+Caveat: Population data for insertions/deletions may be poorly called by next-generation sequencing.
+                                        </div>
+                                        <div id="PM2-comment" class="collapse">
+                                            <br>
+                                            <form>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PM2-comment-1">
+                                                    <label class="form-check-label" for="PS4-comment-1">Reason for applying 1</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PM2-comment-2">
+                                                    <label class="form-check-label" for="PS4-comment-2">Reason for applying 2</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PS4-comment-input">Other comments</label>
+                                                    <textarea class="form-control" id="PM2-comment-input" rows="3" placeholder="Add comments..."></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <!-- Button start-->
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#PM2-comment">Comment</a>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Not applied</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Apply PM2</a></li>
+                                                <li><a href="#">Apply PM2_strong</a></li>
+                                                <li><a href="#">Apply PM2_supporting</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">May be able to apply with further evidence</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <!-- Button end -->
+                                </tr>
+                                <!-- BA1/BS1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BA1/ BS1</b></td>
+                                    <td style="width:300px">MAF is too high for disorder.
+                                    <a href="#BA1" data-toggle="collapse">More info...</a>
+                                        <div id="BA1" class="collapse">
+<br>
+Allele frequency is greater than expected for disorder.
+<br>
+BA1- Allele frequency is >5% in Exome Sequencing Project, 1000 Genomes Project, or Exome Aggregation Consortium.
+BS1- Allele frequency is greater than expected for disorder.
+                                        </div>
+                                        <div id="BA1-comment" class="collapse">
+                                            <form>
+                                                <br>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="BA1-comment-1">
+                                                    <label class="form-check-label" for="BS2-comment-1">Reason for applying 1</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="BA1-comment-2">
+                                                    <label class="form-check-label" for="BS2-comment-2">Reason for applying 2</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="BS2-comment-input">Other comments</label>
+                                                    <textarea class="form-control" id="BA1-comment-input" rows="3" placeholder="Add comments..."></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <!-- Button start-->
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#BA1-comment">Comment</a>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Not applied</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Apply BA1</a></li>
+                                                <li><a href="#">Apply BS1</a></li>
+                                                <li><a href="#">Apply BS1_moderate</a></li>
+                                                <li><a href="#">Apply BS1_supporting</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">May be able to apply with further evidence</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <!-- Button end -->
+                                </tr>
+                                <!--BS2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BS2</b></td>
+                                    <td style="width:300px">Observation in controls inconsistent with disease penetrance.
+                                    <a href="#BS2" data-toggle="collapse">More info...</a>
+                                        <div id="BS2" class="collapse">
+<br>
+Observed in a healthy adult individual for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age
+                                        </div>
+                                        <div id="BS2-comment" class="collapse">
+                                            <form>
+                                                <br>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="BS2-comment-1">
+                                                    <label class="form-check-label" for="BS2-comment-1">Reason for applying 1</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="BS2-comment-2">
+                                                    <label class="form-check-label" for="BS2-comment-2">Reason for applying 2</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="BS2-comment-input">Other comments</label>
+                                                    <textarea class="form-control" id="BS2-comment-input" rows="3" placeholder="Add comments..."></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <!-- Button start-->
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#BS2-comment">Comment</a>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Not applied</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Apply BS2</a></li>
+                                                <li><a href="#">Apply BS2_moderate</a></li>
+                                                <li><a href="#">Apply BS2_supporting</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">May be able to apply with further evidence</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <!-- Button end -->
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Computational and predictive data section -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Computational and predictive data</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-condensed">
+                                <!-- PVS1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PVS1</b></td>
+                                    <td style="width:300px">Prevalence in affecteds statistically increased over controls.
+                                        <a href="#PVS1-info" data-toggle="collapse">More info...</a>
+                                        <div id="PVS1-info" class="collapse">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </div>
+                                        <div id="PVS1-comment" class="collapse">
+                                            <form>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PVS1-comment-1">
+                                                    <label class="form-check-label" for="PVS1-comment-1">Reason for applying 1</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="PVS1-comment-2">
+                                                    <label class="form-check-label" for="PVS1-comment-2">Reason for applying 2</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PS4-comment-input">Other comments</label>
+                                                    <textarea class="form-control" id="PVS1-comment-input" rows="3" placeholder="Add comments..."></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <!-- Button start-->
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#PVS1-comment">Comment</a>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Not applied</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#PVS1-summary" data-show="collapse">Apply PVS1</a></li>
+                                                <li><a href="#">Apply PVS1_moderate</a></li>
+                                                <li><a href="#">Apply PVS1_supporting</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">May be able to apply with further evidence</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <!-- Button end -->
+                                </tr>
+                                <!-- PS1 -->
+                                <!-- PM4 -->
+                                <!-- PM5 -->
+                                <!-- PP3 -->
+                                <!-- BP1 -->
+                                <!-- BP3 -->
+                                <!-- BP4 -->
+                                <!-- BP7 -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Summary box -->
+            <div class="panel panel-success col-sm3 col-md-3 col-lg-3">
+                <div class="panel-body">
+                    <h4>Summary</h4>
+                    <h5>Pathogenic</h5>
+                    <div id="PVS1-summary" class="collapse">PVS1</div>
+                    <div id="PS4-summary" class="collapse">PS4</div>
+                    <div id="PS4_M-summary" class="collapse">PS4_M</div>
+                    <div id="PS4_S-summary" class="collapse">PS4_S</div>
+                    <h5>Benign</h5>
+                    <h5>Maybe</h5>
+                    <div id="PS4-maybe-summary" class="collapse">??? PS4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
