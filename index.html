@@ -16,7 +16,7 @@
             <!-- Main body -->
             <div class="panel-group col-sm9 col-md-9 col-lg-9" id="accordion">
                 <!-- Population data section -->
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Population data</a>
@@ -86,6 +86,41 @@ Absent from controls (or at extremely low frequency if recessive) in Exome Seque
 <br>
 Caveat: Population data for insertions/deletions may be poorly called by next-generation sequencing.
                                         </div>
+                                        <!-- Modal -->
+                                        <div id="PM2-modal" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">PM2 evidence</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="PM2-comment-1">
+                                                            <label class="form-check-label" for="PS4-comment-1">Reason for applying 1</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="PM2-comment-2">
+                                                            <label class="form-check-label" for="PS4-comment-2">Reason for applying 2</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="PS4-comment-input">Other comments</label>
+                                                            <textarea class="form-control" id="PM2-comment-input" rows="3" placeholder="Add comments..."></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-light btn-sm">Save </button>
+                                                        <button type="button" class="btn btn-light btn-sm">Clear</button>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                <!-- delete!!!
                                         <div id="PM2-comment" class="collapse">
                                             <br>
                                             <form>
@@ -105,11 +140,12 @@ Caveat: Population data for insertions/deletions may be poorly called by next-ge
                                                 <button type="button" class="btn btn-light btn-sm">Clear</button>
                                             </form>
                                         </div>
+                                        --->
                                     </td>
                                     <!-- Button start-->
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <a type="button" class="btn btn-default btn-sm" data-toggle="collapse" href="#PM2-comment">Comment</a>
+                                            <a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#PM2-modal">Comment</a>
                                             <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="#">Not applied</a></li>
@@ -227,7 +263,7 @@ Observed in a healthy adult individual for a recessive (homozygous), dominant (h
                     </div>
                 </div>
                 <!-- Computational and predictive data section -->
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Computational and predictive data</a>
@@ -297,7 +333,7 @@ Observed in a healthy adult individual for a recessive (homozygous), dominant (h
                 </div>
             </div>
             <!-- Summary box -->
-            <div class="panel panel-success col-sm3 col-md-3 col-lg-3">
+            <div class="panel panel-default col-sm3 col-md-3 col-lg-3">
                 <div class="panel-body">
                     <h4>Summary</h4>
                     <h5>Pathogenic</h5>
