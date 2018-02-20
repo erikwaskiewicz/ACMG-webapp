@@ -10,9 +10,24 @@
 </head>
 
 <body ng-app="myApp" ng-controller="MainController">
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand bg-light navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <h3>Variant classification tool</h3>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Classify variant</a>
+    </li>
+  </ul>
+</nav>
+<br>
+
 <div class="container">
-    <h2>Variant classification tool</h2>
-    <p>Tool for classifying variants using the ACMG/AMP guidelines {{ $index }}</p>
 
 <div class="row">
 <div class="col-sm8 col-md-8 col-lg-8"><!-- main body start -->
@@ -21,11 +36,9 @@
       <div ng-repeat="x in section" class="card">
 
         <div class="card-header">
-          <p class="mb-0">
             <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#myButton{{ $index }}">
               {{ x.header }}
             </a>
-          </p>
         </div>
 
         <div id="myButton{{ $index }}" class="collapse" data-parent="#accordion" aria-expanded="true">
@@ -38,15 +51,11 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse" href="#">Comment</button>
                             <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Not applied</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#PVS1-summary" data-show="collapse">Apply PVS1</a></li>
-                                    <li><a href="#">Apply PVS1_moderate</a></li>
-                                    <li><a href="#">Apply PVS1_supporting</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">May be able to apply with further evidence</a></li>
-                                </ul>
+                            <div class="dropdown-menu">
+                                <div ng-repeat="z in y[2]">
+                                    <a class="dropdown-item" href="#" ng-click="score.pvs1 = [1,0,0,0]">{{ z }}</a>
+                                </div>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -76,27 +85,27 @@
                 </tr>
                 <tr>
                     <td style="width:100px" align="center"><b><font color="red">PVS</font></b></td>
-                    <td style="width:50px" align="center">{{count-pvs}}</td>
-                    <td style="width:100px" align="center"><b><font color="blue">BA</font></b></td>
+                    <td style="width:50px" align="center">{{ score.pvs1[0] }}</td>
+                    <td style="width:100px" align="center"><b><font color="purple">BA</font></b></td>
                     <td style="width:50px" align="center">{{count-ba}}</td>
                 </tr>
                 <tr>
                     <td style="width:100px" align="center"><b><font color="red">PS</font></b></td>
                     <td style="width:50px" align="center">{{count-ps}}</td>
-                    <td style="width:100px" align="center"><b><font color="blue">BS</font></b></td>
+                    <td style="width:100px" align="center"><b><font color="purple">BS</font></b></td>
                     <td style="width:50px" align="center">{{count-bs}}</td>
                 </tr>
                 <tr>
                     <td style="width:100px" align="center"><b><font color="orange">PM</font></b></td>
                     <td style="width:50px" align="center">{{count-pm}}</td>
-                    <td style="width:100px" align="center"><b><font color="blue">BM</font></b></td>
-                    <td style="width:50px" align="center">{{count-bm}}</td>
-                </tr>
-                <tr>
-                    <td style="width:100px" align="center"><b><font color="yellow">PP</font></b></td>
-                    <td style="width:50px" align="center">{{count-pp}}</td>
                     <td style="width:100px" align="center"><b><font color="blue">BP</font></b></td>
                     <td style="width:50px" align="center">{{count-bp}}</td>
+                </tr>
+                <tr>
+                    <td style="width:100px" align="center"><b><font color="green">PP</font></b></td>
+                    <td style="width:50px" align="center">{{count-pp}}</td>
+                    <td style="width:100px" align="center"></td>
+                    <td style="width:50px" align="center"></td>
                 </tr>
             </table>
         </div>
