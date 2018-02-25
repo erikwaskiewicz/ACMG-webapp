@@ -10,109 +10,640 @@
 </head>
 
 <body ng-app="myApp" ng-controller="MainController">
-
 <div class="container">
 
-<!-- A grey horizontal navbar that becomes vertical on small screens -->
-<nav class="navbar navbar-expand bg-light navbar-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <h3>Variant classification tool</h3>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Classify variant</a>
-    </li>
-  </ul>
-</nav>
-<br>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand bg-light navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h3>Variant classification tool</h3>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Classify variant</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <!-- navbar end -->
 
-<div class="row">
-<div class="col-sm8 col-md-8 col-lg-8"><!-- main body start -->
+    <!-- main body -->
+    <div class="row">
+        <!-- left column start -->
+        <div class="col-sm8 col-md-8 col-lg-8">
+            <div id="accordion" aria-multiselectable="true">
+                <div class="card">
 
-    <div id="accordion" aria-multiselectable="true">
-      <div ng-repeat="x in section" class="card">
-
-        <div class="card-header">
-            <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#myButton{{ $index }}">
-              {{ x.header }}
-            </a>
-        </div>
-
-        <div id="myButton{{ $index }}" class="collapse" data-parent="#accordion" aria-expanded="true">
-          <div class="card-body">
-              <table class="table table-condensed">
-                <tr ng-repeat="y in x.criteria">
-                    <td style="width:30px" align="center"><b>{{ y[0] }}</b></td>
-                    <td style="width:300px">{{ y[1] }}</td>
-                    <td style="width:100px" align="right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse" href="#">Comment</button>
-                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
-                            <div class="dropdown-menu">
-                                <div ng-repeat="z in y[2]">
-                                    <a class="dropdown-item" href="#" ng-click="score.pvs1 = [1,0,0,0]">{{ z }}</a>
-                                </div>
-                            </div>
+                    <!--SECTION 1 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section1">
+                          Variant type and gene variant profile
+                        </a>
+                    </div>
+                    <div id="section1" class="collapse show" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PVS1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PVS1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pvs1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pvs1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pvs1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PM4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM4</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm4_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm4_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm4_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PP2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PP2</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pp2_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp2_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp2_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP3 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP3</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp3_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp3_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp3_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-                    </td>
-                </tr>
-              </table>
-          </div>
-        </div>
+                    </div>
 
-      </div>
+                    <!--SECTION 2 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section2">
+                          Frequency data
+                        </a>
+                    </div>
+                    <div id="section2" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PS4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PS4</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="ps4_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps4_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps4_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PM2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM2</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm2_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm2_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm2_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BA1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BA1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="ba1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="ba1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="ba1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BS1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BS1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bs1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BS2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BS2</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bs2_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs2_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs2_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 3 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section3">
+                          Review of literature and databases
+                        </a>
+                    </div>
+                    <div id="section3" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PS1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PS1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="ps1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PM1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PM5 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM5</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm5_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm5_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm5_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PP5 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PP5</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pp5_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp5_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp5_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP6 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP6</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp6_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp6_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp6_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 4 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section4">
+                          Functional studies
+                        </a>
+                    </div>
+                    <div id="section4" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PS3 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PS3</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="ps3_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps3_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps3_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BS3 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BS3</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bs3_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs3_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs3_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 5 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section5">
+                          Computer predictions
+                        </a>
+                    </div>
+                    <div id="section5" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PP3 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PP3</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pp3_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp3_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp3_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP4</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp4_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp4_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp4_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP7 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP7</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp7_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp7_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp7_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 6 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section6">
+                          De novo variants
+                        </a>
+                    </div>
+                    <div id="section6" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PS2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PS2</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="ps2_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps2_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps2_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PM6 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM6</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm6_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm6_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm6_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 7 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section7">
+                          Phenotype and family history information
+                        </a>
+                    </div>
+                    <div id="section7" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PP1 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PP1</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pp1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp1_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp1_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- PP4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PP4</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pp4_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp4_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp4_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BS4 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BS4</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bs4_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs4_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bs4_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--SECTION 8 -->
+                    <div class="card-header">
+                        <a href="#" data-toggle="collapse" data-parent="#accordion" data-target="#section8">
+                          Multiple variants identified in a patient
+                        </a>
+                    </div>
+                    <div id="section8" class="collapse" data-parent="#accordion" aria-expanded="true">
+                        <div class="card-body">
+                            <table class="table table-condensed">
+                                <!-- PM3 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>PM3</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="pm3_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm3_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="pm3_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP2 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP2</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp2_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp2_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp2_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- BP5 -->
+                                <tr>
+                                    <td style="width:30px" align="center"><b>BP5</b></td>
+                                    <td style="width:300px">Description</td>
+                                    <td style="width:100px" align="right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" ng-click="bp5_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp5_notapplied()">Maybe</a>
+                                                <a class="dropdown-item" href="#" ng-click="bp5_notapplied()">Not applied</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- left column end -->
+
+        <!-- right column start -->
+        <div class="col-sm4 col-md-4 col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Summary</h5>
+                </div>
+                <div class="card-body">
+                    <p class="btn btn-block btn-lg btn-warning" ng-click="classify()" ng-if="classification === 'vus1'">VUS (Mixed criteria)</p>
+                    <p class="btn btn-block btn-lg btn-warning" ng-click="classify()" ng-if="classification === 'vus2'">VUS (Not met criteria)</p>
+                    <p class="btn btn-block btn-lg btn-danger" ng-click="classify()" ng-if="classification === 'pathogenic'">Pathogenic</p>
+                    <p class="btn btn-block btn-lg btn-danger" ng-click="classify()" ng-if="classification === 'likely_pathogenic'">Likely pathogenic</p>
+                    <p class="btn btn-block btn-lg btn-info" ng-click="classify()" ng-if="classification === 'likely_benign'">Likely benign</p>
+                    <p class="btn btn-block btn-lg btn-info" ng-click="classify()" ng-if="classification === 'benign'">Benign</p>
+                    <table class="table table-condensed">
+                        <tr>
+                            <td colspan="4"><b>Criteria applied:</b></td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px" align="center"><b><font color="red">PVS</font></b></td>
+                            <td style="width:50px" align="center">{{path_vs()}}</td>
+                            <td style="width:100px" align="center"><b><font color="purple">BA</font></b></td>
+                            <td style="width:50px" align="center">{{benign_a()}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px" align="center"><b><font color="red">PS</font></b></td>
+                            <td style="width:50px" align="center">{{path_s()}}</td>
+                            <td style="width:100px" align="center"><b><font color="purple">BS</font></b></td>
+                            <td style="width:50px" align="center">{{benign_s()}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px" align="center"><b><font color="orange">PM</font></b></td>
+                            <td style="width:50px" align="center">{{path_m()}}</td>
+                            <td style="width:100px" align="center"><b><font color="blue">BP</font></b></td>
+                            <td style="width:50px" align="center">{{benign_p()}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:100px" align="center"><b><font color="green">PP</font></b></td>
+                            <td style="width:50px" align="center">{{path_p()}}</td>
+                            <td style="width:100px" align="center"></td>
+                            <td style="width:50px" align="center"></td>
+                        </tr>
+                    </table>
+                    <a class="btn btn-block btn-lg btn-secondary" href="#">Report</a>
+                    <a class="btn btn-block btn-lg btn-secondary" href="index.html">Clear</a>
+                </div>
+            </div>
+        </div>
+        <!-- right column en -->
 
     </div>
-
-</div><!-- main body end -->
-
-<div class="col-sm4 col-md-4 col-lg-4"><!-- Summary box start -->
-
-    <div class="card">
-        <div class="card-header">
-            <h5>Summary</h5>
-        </div>
-        <div class="card-body">
-            <table class="table table-condensed">
-                <tr>
-                    <p class="btn btn-block btn-lg btn-warning">VUS</p>
-                </tr>
-                <tr>
-                    <td colspan="4"><b>Criteria applied:</b></td>
-                </tr>
-                <tr>
-                    <td style="width:100px" align="center"><b><font color="red">PVS</font></b></td>
-                    <td style="width:50px" align="center">{{ score.pvs1[0] }}</td>
-                    <td style="width:100px" align="center"><b><font color="purple">BA</font></b></td>
-                    <td style="width:50px" align="center">{{count-ba}}</td>
-                </tr>
-                <tr>
-                    <td style="width:100px" align="center"><b><font color="red">PS</font></b></td>
-                    <td style="width:50px" align="center">{{count-ps}}</td>
-                    <td style="width:100px" align="center"><b><font color="purple">BS</font></b></td>
-                    <td style="width:50px" align="center">{{count-bs}}</td>
-                </tr>
-                <tr>
-                    <td style="width:100px" align="center"><b><font color="orange">PM</font></b></td>
-                    <td style="width:50px" align="center">{{count-pm}}</td>
-                    <td style="width:100px" align="center"><b><font color="blue">BP</font></b></td>
-                    <td style="width:50px" align="center">{{count-bp}}</td>
-                </tr>
-                <tr>
-                    <td style="width:100px" align="center"><b><font color="green">PP</font></b></td>
-                    <td style="width:50px" align="center">{{count-pp}}</td>
-                    <td style="width:100px" align="center"></td>
-                    <td style="width:50px" align="center"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-</div><!-- summary box end -->
-</div>
+    <!-- main body end -->
 </div>
 </body>
 </html>
