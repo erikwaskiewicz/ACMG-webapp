@@ -237,6 +237,14 @@ $scope.benign_p = function() {
         $scope.ps4 = [0,1,0,0];
         $scope.classify();
         };
+  $scope.ps4m_apply = function() {
+        $scope.ps4 = [0,0,1,0];
+        $scope.classify();
+        };
+  $scope.ps4s_apply = function() {
+        $scope.ps4 = [0,0,0,1];
+        $scope.classify();
+        };
   $scope.ps4_notapplied = function() {
         $scope.ps4 = [0,0,0,0];
         $scope.classify();
