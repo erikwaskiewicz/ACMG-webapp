@@ -59,8 +59,8 @@
                                     </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#PVS1_modal">Comment</button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pvs1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pvs1_notapplied()">Maybe</a>
@@ -84,7 +84,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm4_notapplied()">Maybe</a>
@@ -108,7 +108,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp2_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp2_notapplied()">Maybe</a>
@@ -132,7 +132,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp1_notapplied()">Maybe</a>
@@ -156,7 +156,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp3_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp3_notapplied()">Maybe</a>
@@ -166,6 +166,43 @@
                                     </td>
                                 </tr>
                             </table>
+                        </div>
+                    </div>
+                    <!-- PVS1 Modal -->
+                    <div class="modal fade" id="PVS1_modal" tabindex="-1" role="dialog" aria-labelledby="PVS1_modal_label" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="PVS1_modal_label">PVS1 - reasons for applying.</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                Reason for applying 1
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                Reason for applying 2
+                                            </label>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="PVS1_comments" placeholder="Comments..."></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -193,7 +230,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ps4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps4m_apply()">Apply PS4_M</a>
@@ -219,7 +256,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm2_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm2_notapplied()">Maybe</a>
@@ -243,7 +280,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ba1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ba1_notapplied()">Maybe</a>
@@ -267,7 +304,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bs1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bs1_notapplied()">Maybe</a>
@@ -291,7 +328,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bs2_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bs2_notapplied()">Maybe</a>
@@ -320,7 +357,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ps1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps1_notapplied()">Maybe</a>
@@ -336,7 +373,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm1_notapplied()">Maybe</a>
@@ -352,7 +389,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm5_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm5_notapplied()">Maybe</a>
@@ -368,7 +405,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp5_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp5_notapplied()">Maybe</a>
@@ -384,7 +421,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp6_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp6_notapplied()">Maybe</a>
@@ -413,7 +450,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ps3_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps3_notapplied()">Maybe</a>
@@ -429,7 +466,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bs3_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bs3_notapplied()">Maybe</a>
@@ -458,7 +495,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp3_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp3_notapplied()">Maybe</a>
@@ -474,7 +511,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp4_notapplied()">Maybe</a>
@@ -490,7 +527,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp7_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp7_notapplied()">Maybe</a>
@@ -519,7 +556,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ps2_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps2_notapplied()">Maybe</a>
@@ -535,7 +572,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm6_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm6_notapplied()">Maybe</a>
@@ -564,7 +601,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp1_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp1_notapplied()">Maybe</a>
@@ -580,7 +617,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp4_notapplied()">Maybe</a>
@@ -596,7 +633,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bs4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bs4_notapplied()">Maybe</a>
@@ -625,7 +662,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm3_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="pm3_notapplied()">Maybe</a>
@@ -641,7 +678,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp2_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp2_notapplied()">Maybe</a>
@@ -657,7 +694,7 @@
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
-                                            <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
+                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp5_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="bp5_notapplied()">Maybe</a>
