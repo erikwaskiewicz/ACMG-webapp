@@ -241,7 +241,7 @@ $scope.benign_p = function() {
         $scope.ps4 = [0,0,1,0];
         $scope.classify();
         };
-  $scope.ps4s_apply = function() {
+  $scope.ps4p_apply = function() {
         $scope.ps4 = [0,0,0,1];
         $scope.classify();
         };
@@ -320,6 +320,14 @@ $scope.benign_p = function() {
   $scope.pp1 = [0,0,0,0];
   $scope.pp1_apply = function() {
         $scope.pp1 = [0,0,0,1];
+        $scope.classify();
+        };
+  $scope.pp1m_apply = function() {
+        $scope.pp1 = [0,0,1,0];
+        $scope.classify();
+        };
+  $scope.pp1s_apply = function() {
+        $scope.pp1 = [0,1,0,0];
         $scope.classify();
         };
   $scope.pp1_notapplied = function() {
