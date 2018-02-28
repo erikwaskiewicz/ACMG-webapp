@@ -10,7 +10,6 @@
 </head>
 
 <body ng-app="myApp" ng-controller="MainController">
-<div class="container">
 
     <!-- navbar -->
     <nav class="navbar navbar-expand bg-light navbar-light">
@@ -28,6 +27,8 @@
     </nav>
     <br>
     <!-- navbar end -->
+
+<div class="container">
 
     <!-- main body -->
     <div class="row">
@@ -170,7 +171,7 @@
                     </div>
                     <!-- PVS1 Modal -->
                     <div class="modal fade" id="PVS1_modal" tabindex="-1" role="dialog" aria-labelledby="PVS1_modal_label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="PVS1_modal_label">PVS1 - reasons for applying.</h5>
@@ -183,13 +184,25 @@
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input">
-                                                Reason for applying 1
+                                                Loss-of-function is a known disease mechanism for this gene
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input">
-                                                Reason for applying 2
+                                                Nonsense or frameshift with truncating mutations reported further downstream
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                Single or multi-exon deletion, or in a canonical splice site with predicted result out of frame
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                In-frame multi-exon deletion causing large deletion/ removal of functional domain
                                             </label>
                                         </div>
                                         <br>
@@ -234,7 +247,7 @@
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="ps4_apply()">Apply</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps4m_apply()">Apply PS4_M</a>
-                                                <a class="dropdown-item" href="#" ng-click="ps4s_apply()">Apply PS4_S</a>
+                                                <a class="dropdown-item" href="#" ng-click="ps4p_apply()">Apply PS4_P</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps4_notapplied()">Maybe</a>
                                                 <a class="dropdown-item" href="#" ng-click="ps4_notapplied()">Not applied</a>
                                             </div>
@@ -353,7 +366,15 @@
                                 <!-- PS1 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PS1</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Same amino acid change as an estabilished pathogenic variant.
+                                        <a data-toggle="collapse" href="#PS1_moreinfo">More info...</a>
+                                        <div class="collapse" id="PS1_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -369,7 +390,15 @@
                                 <!-- PM1 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PM1</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Mutational hot spot or well-studied functional domain without benign variation.
+                                        <a data-toggle="collapse" href="#PM1_moreinfo">More info...</a>
+                                        <div class="collapse" id="PM1_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -385,7 +414,15 @@
                                 <!-- PM5 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PM5</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Novel missense change at an amino acid residue where a different pathogenic missense change has been seen before.
+                                        <a data-toggle="collapse" href="#PM5_moreinfo">More info...</a>
+                                        <div class="collapse" id="PM5_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -401,7 +438,15 @@
                                 <!-- PP5 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PP5</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Reputable source reported as pathogenic.
+                                        <a data-toggle="collapse" href="#PP5_moreinfo">More info...</a>
+                                        <div class="collapse" id="PP5_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -417,7 +462,15 @@
                                 <!-- BP6 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BP6</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Reputable source reported as benign.
+                                        <a data-toggle="collapse" href="#BP6_moreinfo">More info...</a>
+                                        <div class="collapse" id="BP6_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -446,7 +499,15 @@
                                 <!-- PS3 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PS3</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Well-established functional studies show a deleterious effect.
+                                        <a data-toggle="collapse" href="#PS3_moreinfo">More info...</a>
+                                        <div class="collapse" id="PS3_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -462,7 +523,15 @@
                                 <!-- BS3 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BS3</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Well-established functional studies show no deleterious effect.
+                                        <a data-toggle="collapse" href="#BS3_moreinfo">More info...</a>
+                                        <div class="collapse" id="BS3_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -491,7 +560,15 @@
                                 <!-- PP3 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PP3</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Multiple lines of computational evidence support a deleterious effect on the gene /gene product.
+                                        <a data-toggle="collapse" href="#PP3_moreinfo">More info...</a>
+                                        <div class="collapse" id="PP3_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -507,7 +584,15 @@
                                 <!-- BP4 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BP4</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Multiple lines of computational evidence suggest no impact on gene /gene product.
+                                        <a data-toggle="collapse" href="#BP4_moreinfo">More info...</a>
+                                        <div class="collapse" id="BP4_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -523,7 +608,15 @@
                                 <!-- BP7 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BP7</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Silent variant with non predicted splice impact.
+                                        <a data-toggle="collapse" href="#BP7_moreinfo">More info...</a>
+                                        <div class="collapse" id="BP7_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -552,7 +645,15 @@
                                 <!-- PS2 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PS2</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        De novo (paternity and maternity confirmed).
+                                        <a data-toggle="collapse" href="#PS2_moreinfo">More info...</a>
+                                        <div class="collapse" id="PS2_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -568,7 +669,15 @@
                                 <!-- PM6 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PM6</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        De novo (without paternity & maternity confirmed).
+                                        <a data-toggle="collapse" href="#PM6_moreinfo">More info...</a>
+                                        <div class="collapse" id="PM6_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -597,13 +706,23 @@
                                 <!-- PP1 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PP1</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Cosegregation with disease in multiple affected family members.
+                                        <a data-toggle="collapse" href="#PP1_moreinfo">More info...</a>
+                                        <div class="collapse" id="PP1_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#" ng-click="pp1_apply()">Apply</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp1_apply()">Apply PP1</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp1m_apply()">Apply PP1_M</a>
+                                                <a class="dropdown-item" href="#" ng-click="pp1s_apply()">Apply PP1_S</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp1_notapplied()">Maybe</a>
                                                 <a class="dropdown-item" href="#" ng-click="pp1_notapplied()">Not applied</a>
                                             </div>
@@ -613,7 +732,15 @@
                                 <!-- PP4 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PP4</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Patients phenotype or family history highly specific for gene.
+                                        <a data-toggle="collapse" href="#PP4_moreinfo">More info...</a>
+                                        <div class="collapse" id="PP4_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -629,7 +756,15 @@
                                 <!-- BS4 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BS4</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Nonsegregation with disease.
+                                        <a data-toggle="collapse" href="#BS4_moreinfo">More info...</a>
+                                        <div class="collapse" id="BS4_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -658,7 +793,15 @@
                                 <!-- PM3 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>PM3</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        For recessive disorders, detected in trans with a pathogenic variant.
+                                        <a data-toggle="collapse" href="#PM3_moreinfo">More info...</a>
+                                        <div class="collapse" id="PM3_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -674,7 +817,15 @@
                                 <!-- BP2 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BP2</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Observed in cis with a pathogenic variant/ in trans with a dominant variant.
+                                        <a data-toggle="collapse" href="#BP2_moreinfo">More info...</a>
+                                        <div class="collapse" id="BP2_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -690,7 +841,15 @@
                                 <!-- BP5 -->
                                 <tr>
                                     <td style="width:30px" align="center"><b>BP5</b></td>
-                                    <td style="width:300px">Description</td>
+                                    <td style="width:500px">
+                                        Found in case with an alternate cause.
+                                        <a data-toggle="collapse" href="#BP5_moreinfo">More info...</a>
+                                        <div class="collapse" id="BP5_moreinfo">
+                                            <div class="card card-body">
+                                            More detailed info here........
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
@@ -709,6 +868,7 @@
 
                 </div>
             </div>
+            <br>
         </div>
         <!-- left column end -->
 
@@ -758,8 +918,9 @@
                     <a class="btn btn-block btn-lg btn-secondary" href="index.html">Clear</a>
                 </div>
             </div>
+            <br>
         </div>
-        <!-- right column en -->
+        <!-- right column end -->
 
     </div>
     <!-- main body end -->
