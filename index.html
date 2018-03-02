@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand bg-light navbar-light">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <h3>Variant classification tool</h3>
+                <h3>Variant classification tool   </h3>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -84,7 +84,7 @@
                                     </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#PM4_modal">Comment</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pm4_apply()">Apply</a>
@@ -108,7 +108,7 @@
                                     </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#PP2_modal">Comment</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="pp2_apply()">Apply</a>
@@ -132,7 +132,7 @@
                                     </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#BP1_modal">Comment</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp1_apply()">Apply</a>
@@ -156,7 +156,7 @@
                                     </td>
                                     <td style="width:100px" align="right">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-light btn-sm" data-toggle="collapse">Comment</button>
+                                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#BP3_modal">Comment</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">Apply  <span class="caret"></span></button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#" ng-click="bp3_apply()">Apply</a>
@@ -167,55 +167,6 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                    </div>
-                    <!-- PVS1 Modal -->
-                    <div class="modal fade" id="PVS1_modal" tabindex="-1" role="dialog" aria-labelledby="PVS1_modal_label" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="PVS1_modal_label">PVS1 - reasons for applying.</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                                Loss-of-function is a known disease mechanism for this gene
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                                Nonsense or frameshift with truncating mutations reported further downstream
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                                Single or multi-exon deletion, or in a canonical splice site with predicted result out of frame
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input">
-                                                In-frame multi-exon deletion causing large deletion/ removal of functional domain
-                                            </label>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <textarea class="form-control" id="PVS1_comments" placeholder="Comments..."></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-sm btn-danger">Save</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -914,8 +865,8 @@
                             <td style="width:50px" align="center"></td>
                         </tr>
                     </table>
-                    <a class="btn btn-block btn-lg btn-secondary" href="#">Report</a>
-                    <a class="btn btn-block btn-lg btn-secondary" href="index.html">Clear</a>
+                    <button type="button" class="btn btn-block btn-lg btn-info" data-toggle="modal" data-target="#summary_modal">Report</button>
+                    <a class="btn btn-block btn-lg btn-info" href="index.html">Clear</a>
                 </div>
             </div>
             <br>
@@ -924,6 +875,327 @@
 
     </div>
     <!-- main body end -->
+
+    <!-- Summary Modal -->
+    <div class="modal fade" id="summary_modal" role="dialog" aria-labelledby="summary_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="summary_modal_label">Summary</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="btn btn-block btn-lg btn-warning" ng-click="classify()" ng-if="classification === 'vus1'">VUS (Mixed criteria)</p>
+                    <p class="btn btn-block btn-lg btn-warning" ng-click="classify()" ng-if="classification === 'vus2'">VUS (Criteria not met)</p>
+                    <p class="btn btn-block btn-lg btn-danger" ng-click="classify()" ng-if="classification === 'pathogenic'">Pathogenic</p>
+                    <p class="btn btn-block btn-lg btn-danger" ng-click="classify()" ng-if="classification === 'likely_pathogenic'">Likely pathogenic</p>
+                    <p class="btn btn-block btn-lg btn-info" ng-click="classify()" ng-if="classification === 'likely_benign'">Likely benign</p>
+                    <p class="btn btn-block btn-lg btn-info" ng-click="classify()" ng-if="classification === 'benign'">Benign</p>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <td style="width:50px"><b>Criteria</b></td>
+                                <td><b>Evidence</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="pvs1[0] === 1">
+                                <td style="width:50px"><b>PVS1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="ps1[1] === 1">
+                                <td style="width:50px"><b>PS1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="ps2[1] === 1">
+                                <td style="width:50px"><b>PS2</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="ps3[1] === 1">
+                                <td style="width:50px"><b>PS3</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="ps4[1] === 1">
+                                <td style="width:50px"><b>PS4</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm1[2] === 1">
+                                <td style="width:50px"><b>PM1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm2[2] === 1">
+                                <td style="width:50px"><b>PM2</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm3[2] === 1">
+                                <td style="width:50px"><b>PM3</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm4[2] === 1">
+                                <td style="width:50px"><b>PM4</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm5[2] === 1">
+                                <td style="width:50px"><b>PM5</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pm6[2] === 1">
+                                <td style="width:50px"><b>PM6</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pp1[3] === 1">
+                                <td style="width:50px"><b>PP1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pp2[3] === 1">
+                                <td style="width:50px"><b>PP2</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pp3[3] === 1">
+                                <td style="width:50px"><b>PP3</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pp4[3] === 1">
+                                <td style="width:50px"><b>PP4</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="pp5[3] === 1">
+                                <td style="width:50px"><b>PP5</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="ba1[0] === 1">
+                                <td style="width:50px"><b>BA1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bs1[1] === 1">
+                                <td style="width:50px"><b>BS1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bs2[1] === 1">
+                                <td style="width:50px"><b>BS2</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bs3[1] === 1">
+                                <td style="width:50px"><b>BS3</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bs4[1] === 1">
+                                <td style="width:50px"><b>BS4</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp1[2] === 1">
+                                <td style="width:50px"><b>BP1</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp2[2] === 1">
+                                <td style="width:50px"><b>BP2</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp3[2] === 1">
+                                <td style="width:50px"><b>BP3</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp4[2] === 1">
+                                <td style="width:50px"><b>BP4</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp5[2] === 1">
+                                <td style="width:50px"><b>BP5</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp6[2] === 1">
+                                <td style="width:50px"><b>BP6</b></td>
+                                <td></td>
+                            </tr>
+                            <tr ng-if="bp7[2] === 1">
+                                <td style="width:50px"><b>BP7</b></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PVS1 Modal -->
+    <div class="modal fade" id="PVS1_modal" tabindex="-1" role="dialog" aria-labelledby="PVS1_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PVS1_modal_label">PVS1 - reasons for applying.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Loss-of-function is a known disease mechanism for this gene
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Nonsense or frameshift with truncating mutations reported further downstream
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Single or multi-exon deletion, or in a canonical splice site with predicted result out of frame
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                In-frame multi-exon deletion causing large deletion/ removal of functional domain
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea class="form-control" id="PVS1_comments" placeholder="Comments..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PM4 Modal -->
+    <div class="modal fade" id="PM4_modal" tabindex="-1" role="dialog" aria-labelledby="PM4_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PM4_modal_label">PM4 - reasons for applying.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Reason for applying 1
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea class="form-control" id="PM4_comments" placeholder="Comments..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PP2 Modal -->
+    <div class="modal fade" id="PP2_modal" tabindex="-1" role="dialog" aria-labelledby="PP2_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PP2_modal_label">PP2 - reasons for applying.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Reason for applying 1
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea class="form-control" id="PP2_comments" placeholder="Comments..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BP1 Modal -->
+    <div class="modal fade" id="BP1_modal" tabindex="-1" role="dialog" aria-labelledby="BP1_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BP1_modal_label">BP1 - reasons for applying.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Reason for applying 1
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea class="form-control" id="BP1_comments" placeholder="Comments..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BP3 Modal -->
+    <div class="modal fade" id="BP3_modal" role="dialog" aria-labelledby="BP3_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BP3_modal_label">BP3 - reasons for applying.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Reason for applying 1
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea class="form-control" id="BP3_comments" placeholder="Comments..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-danger">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 </body>
 </html>
